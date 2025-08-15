@@ -18,6 +18,8 @@
 		menuOpen: false
 	};
 
+	let cluesPromise = null;
+
 	/**
 	 * DOM
 	 */
@@ -40,21 +42,23 @@
 	 * Init
 	 */
 	window.addEventListener("DOMContentLoaded", () => {
-		fetch("clues.json")
+		wireEvents();
+		cluesPromise = fetch("clues.json")
 			.then(r => r.json())
 			.then(data => {
 				state.clues = Array.isArray(data?.clues) ? data.clues : [];
-				wireEvents();
 			})
 			.catch(() => {
 				state.clues = [];
-				wireEvents();
 			});
 	});
 
 	function wireEvents() {
 		if ($play) {
-			$play.addEventListener("click", () => startGame());
+			$play.addEventListener("click", async () => {
+				try { await (cluesPromise || Promise.resolve()); } catch(_) {}
+				startGame();
+			});
 		}
 		if ($submit) {
 			$submit.addEventListener("click", onSubmit);
