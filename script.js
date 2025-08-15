@@ -56,7 +56,17 @@
 	function wireEvents() {
 		if ($play) {
 			$play.addEventListener("click", () => { startGame(); });
+			$play.addEventListener("pointerup", () => { startGame(); });
+			$play.addEventListener("keydown", (e) => {
+				if (e.key === "Enter" || e.key === " ") startGame();
+			});
 		}
+		// Delegated fallback in case direct binding fails
+		document.addEventListener("click", (e) => {
+			const t = e.target;
+			if (t && (t.id === "playBtn" || t.closest?.("#playBtn"))) startGame();
+		});
+
 		if ($submit) {
 			$submit.addEventListener("click", onSubmit);
 		}
@@ -90,6 +100,9 @@
 
 		// Keyboard input
 		document.addEventListener("keydown", handleKey);
+
+		// Expose start for safety
+		try { window.__startCryptic = startGame; } catch(_) {}
 	}
 
 	function startGame() {
