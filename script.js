@@ -55,10 +55,7 @@
 
 	function wireEvents() {
 		if ($play) {
-			$play.addEventListener("click", async () => {
-				try { await (cluesPromise || Promise.resolve()); } catch(_) {}
-				startGame();
-			});
+			$play.addEventListener("click", () => { startGame(); });
 		}
 		if ($submit) {
 			$submit.addEventListener("click", onSubmit);
@@ -101,6 +98,13 @@
 		// Safe focus for mobile keyboard
 		try { $mobileInput?.focus(); } catch (_) {}
 		state.idx = 0;
+		// If clues not loaded yet, render basic UI then load when ready
+		if (!Array.isArray(state.clues) || state.clues.length === 0) {
+			(cluesPromise || Promise.resolve()).then(() => {
+				if (Array.isArray(state.clues) && state.clues.length > 0) loadClue(0);
+			});
+			return;
+		}
 		loadClue(state.idx);
 	}
 
