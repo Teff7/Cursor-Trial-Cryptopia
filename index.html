@@ -11,7 +11,7 @@
 		<div id="app" class="app">
 			<div id="welcome" class="screen welcome-screen">
 				<h1 class="title">Welcome to Daily Cryptic</h1>
-				<button id="playBtn" class="btn primary" type="button" style="cursor:pointer" onclick="(window.__startCryptic && window.__startCryptic()) || (function(){var w=document.getElementById('welcome');var g=document.getElementById('game'); if(w){w.classList.add('hidden'); w.style.display='none';} if(g){g.classList.remove('hidden'); g.style.display='block';}})(); return false;">Play</button>
+				<button id="playBtn" class="btn primary" type="button" style="cursor:pointer" onclick="(window.__startCryptic && window.__startCryptic()) || (function(){try{var w=document.getElementById('welcome');var g=document.getElementById('game'); if(w){w.classList.add('hidden'); w.style.display='none';} if(g){g.classList.remove('hidden'); g.style.display='block';}}catch(e){console.error(e);} })(); return false;">Play</button>
 			</div>
 
 			<div id="game" class="screen game-screen hidden">
