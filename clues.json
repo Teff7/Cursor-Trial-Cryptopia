@@ -1,0 +1,101 @@
+{
+	"title": "Clues",
+	"clues": [
+		{
+			"clue": "Mixed nuts can cause shock (4)",
+			"normalClue": "An anagram of NUTS meaning shock",
+			"answer": "STUN",
+			"type": "cryptic",
+			"clueType": "anagram",
+			"definitionWords": ["shock"],
+			"indicatorWords": ["Mixed"],
+			"fodderWords": ["nuts"],
+			"parts": [
+				{
+					"text": "nuts",
+					"hint": "Anagram fodder; 'Mixed' tells you to shuffle the letters in NUTS",
+					"range": [0, 3]
+				}
+			]
+		},
+		{
+			"clue": "Sound of a church bell; a number for those who have passed (4)",
+			"normalClue": "Two meanings of TOLL",
+			"answer": "TOLL",
+			"type": "cryptic",
+			"clueType": "double",
+			"definitions": ["Sound of a church bell", "a number for those who have passed"],
+			"definitionWords": [],
+			"indicatorWords": [],
+			"fodderWords": [],
+			"parts": []
+		},
+		{
+			"clue": "Head of police called, for an accident (5)",
+			"normalClue": "P (head of police) + RANG (called) gives accident PRANG",
+			"answer": "PRANG",
+			"type": "cryptic",
+			"clueType": "charade",
+			"definitionWords": ["accident"],
+			"indicatorWords": ["for"],
+			"fodderWords": ["Head of police", "called"],
+			"parts": [
+				{
+					"text": "Head of police",
+					"hint": "What is the 'Head' of the word 'Police'",
+					"range": [0, 0]
+				},
+				{
+					"text": "called",
+					"hint": "What's another word for called?",
+					"range": [1, 4]
+				}
+			]
+		},
+		{
+			"clue": "Snitch turns back if figurehead makes Trump Tax (6)",
+			"normalClue": "TAR (snitch reversed) + IF + F (figurehead) makes TAX TARIFF",
+			"answer": "TARIFF",
+			"type": "cryptic",
+			"clueType": "charade",
+			"definitionWords": ["Tax"],
+			"indicatorWords": ["turns back", "makes"],
+			"fodderWords": ["snitch", "if", "figurehead"],
+			"parts": [
+				{
+					"text": "snitch",
+					"hint": "Think of 3 letter word for snitch, then reverse the letters",
+					"yields": "TAR",
+					"range": [0, 2]
+				},
+				{
+					"text": "if",
+					"hint": "Literally, 'IF'",
+					"range": [3, 4]
+				},
+				{
+					"text": "figurehead",
+					"hint": "What's the head of the word 'Figure'",
+					"range": [5, 5]
+				}
+			]
+		},
+		{
+			"clue": "Seen on early close (4)",
+			"normalClue": "Hidden word: NEAR appears inside 'on early' meaning close",
+			"answer": "NEAR",
+			"type": "cryptic",
+			"clueType": "hidden",
+			"definitionWords": ["close"],
+			"indicatorWords": ["Seen"],
+			"fodderWords": ["on early"],
+			"parts": [
+				{
+					"text": "on early",
+					"hint": "Hidden word: inside 'on early'",
+					"range": [0, 3]
+				}
+			]
+		}
+	]
+}

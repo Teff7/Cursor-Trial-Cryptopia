@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Daily Cryptic — Mini</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<div id="app" class="app">
+			<div id="welcome" class="screen welcome-screen">
+				<h1 class="title">Welcome to Daily Cryptic</h1>
+				<button id="playBtn" class="btn primary">Play</button>
+			</div>
+
+			<div id="game" class="screen game-screen hidden">
+				<div id="clueContainer" class="clue-container">
+					<div id="clueLine" class="clue"></div>
+				</div>
+
+				<div id="answerContainer" class="answer-container"></div>
+
+				<button id="submitBtn" class="btn submit-btn">Submit</button>
+
+				<div class="hints">
+					<button id="hintsBtn" class="btn dropdown-toggle">Hints ▾</button>
+					<div id="hintsMenu" class="dropdown-menu hidden" role="menu" aria-hidden="true">
+						<button id="revealDef" class="btn dropdown-item" role="menuitem">Reveal Definition</button>
+						<button id="revealLetter" class="btn dropdown-item" role="menuitem">Reveal Letter</button>
+						<button id="revealStruct" class="btn dropdown-item" role="menuitem">Reveal Clue Structure</button>
+						<button id="changeClue" class="btn dropdown-item" role="menuitem">Change Clue</button>
+					</div>
+				</div>
+			</div>
+
+			<input id="mobileInput" class="mobile-input" inputmode="latin" autocomplete="off" autocapitalize="characters" />
+
+			<canvas id="fireworks" class="fireworks hidden"></canvas>
+		</div>
+	</body>
+</html>
